@@ -1,0 +1,17 @@
+{
+    "lists": [
+        {
+            "id": 0,
+            "name": "model"
+        },
+        {
+            "id": 1,
+            "name": "views"
+        },
+        {
+            "id": 2,
+            "name": "controller"
+        }
+    ],
+    "title": "MVC"
+}

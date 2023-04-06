@@ -1,6 +1,7 @@
 const express = require("express");
 const { join } = require("path");
-const ejs = require("ejs");
+console.log("app");
+const { router } = require("./router/index");
 
 const port = 8000;
 const app = express();
@@ -10,13 +11,14 @@ app.set("view engine", "ejs");
 //配置服务器映射到静态文件夹Public
 app.use(express.static(join(__dirname, "public")));
 
+app.use("/", router);
+
 //服务监听
 app.listen(port, () => {
   console.log(`server is listening at port ${port}`);
 });
-
 //利用路由回调动态渲染
-app.get("/", (req, res) => {
+app.get("/dynamicRender", (req, res) => {
   const title = "Server Side Render";
   const lists = [
     {
