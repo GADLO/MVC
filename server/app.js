@@ -15,7 +15,7 @@ app.use("/", router);
 
 //服务监听
 app.listen(port, () => {
-  console.log(`server is listening at port ${port}`);
+  console.log(`server listening on port ${port}`);
 });
 //利用路由回调动态渲染
 app.get("/dynamicRender", (req, res) => {
@@ -51,13 +51,13 @@ app.get("/dynamicRender", (req, res) => {
           <div class="list">
             <ul id="J_list">
             ${lists
-              .map(
-                (item) => `<li>
+      .map(
+        (item) => `<li>
                     <span>${item.id}</span>
                     <p>${item.name}</p>
                     </li>`
-              )
-              .join("")}
+      )
+      .join("")}
             </ul>
           </div>
         </body>
